@@ -46,6 +46,10 @@
     cursor: pointer;
     font-size: $--message-close-size;
 
+    @include rtl(){
+      right: inherit;
+      left: $--dialog-padding-primary;
+    }
     .el-dialog__close {
       color: $--color-info;
     }
@@ -74,6 +78,10 @@
     padding-top: 10px;
     text-align: right;
     box-sizing: border-box;
+
+    @include rtl(){
+      text-align: left;
+    }
   }
 
   // 内容居中布局

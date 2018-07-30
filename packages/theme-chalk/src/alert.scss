@@ -91,6 +91,11 @@
     right: 15px;
     cursor: pointer;
 
+    @include rtl(){
+      right:inherit;
+      left:15px;
+    }
+
     @include when(customed) {
       font-style: normal;
       font-size: $--alert-close-customed-font-size;

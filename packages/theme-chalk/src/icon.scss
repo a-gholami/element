@@ -175,7 +175,16 @@
 .el-icon--left {
   margin-right: 5px;
 }
-
+.el-rtl{
+  .el-icon--right {
+    margin-left: inherit;
+    margin-right: 5px;
+  }
+  .el-icon--left {
+    margin-left: 5px;
+    margin-right: inherit;
+  }
+}
 @keyframes rotating {
   0% {
     transform: rotateZ(0deg);

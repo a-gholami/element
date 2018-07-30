@@ -49,12 +49,26 @@
     right: 1px;
     border-radius: 0 $--border-radius-base $--border-radius-base 0;
     border-left: $--border-base;
+
+    @include rtl(){
+      right: inherit;
+      left: 1px;
+      border-right: $--border-base;
+      border-left: none;
+    }
   }
 
   @include e(decrease) {
     left: 1px;
     border-radius: $--border-radius-base 0 0 $--border-radius-base;
     border-right: $--border-base;
+
+    @include rtl(){
+      left: inherit;
+      right: 1px;
+      border-left: $--border-base;
+      border-right: none;
+    }
   }
 
   @include when(disabled) {
@@ -133,6 +147,11 @@
     .el-input__inner {
       padding-left: 15px;
       padding-right: #{$--input-height + 10};
+
+      @include rtl(){
+        padding-right: 15px;
+        padding-left: #{$--input-height + 10};
+      }
     }
 
     @include e((increase, decrease)) {
@@ -157,6 +176,13 @@
       border-right: none;
       border-left: $--border-base;
       border-radius: 0 0 $--border-radius-base 0;
+
+      @include rtl(){
+        right: auto;
+        left: 1px;
+        border-right: $--border-base;
+        border-left: none;
+      }
     }
 
     &[class*=medium] {

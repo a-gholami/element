@@ -4,6 +4,10 @@
 [class*="el-col-"] {
   float: left;
   box-sizing: border-box;
+
+  @include rtl(){
+    float: right;
+  }
 }
 
 .el-col-0 {
@@ -17,16 +21,31 @@
 
   .el-col-offset-#{$i} {
     margin-left: (1 / 24 * $i * 100) * 1%;
+
+    @include rtl(){
+      margin-left: inherit;
+      margin-right: (1 / 24 * $i * 100) * 1%;
+    }
   }
 
   .el-col-pull-#{$i} {
     position: relative;
     right: (1 / 24 * $i * 100) * 1%;
+
+    @include rtl(){
+      left: (1 / 24 * $i * 100) * 1%;
+      right: inherit;
+    }
   }
 
   .el-col-push-#{$i} {
     position: relative;
     left: (1 / 24 * $i * 100) * 1%;
+
+    @include rtl(){
+      left: inherit;
+      right: (1 / 24 * $i * 100) * 1%;
+    }
   }
 }
 
@@ -41,16 +60,31 @@
 
     .el-col-xs-offset-#{$i} {
       margin-left: (1 / 24 * $i * 100) * 1%;
+
+      @include rtl(){
+        margin-left: inherit;
+        margin-right: (1 / 24 * $i * 100) * 1%;
+      }
     }
 
     .el-col-xs-pull-#{$i} {
       position: relative;
       right: (1 / 24 * $i * 100) * 1%;
+
+      @include rtl(){
+        left: (1 / 24 * $i * 100) * 1%;
+        right: inherit;
+      }
     }
 
     .el-col-xs-push-#{$i} {
       position: relative;
       left: (1 / 24 * $i * 100) * 1%;
+
+      @include rtl(){
+        left: inherit;
+        right: (1 / 24 * $i * 100) * 1%;
+      }
     }
   }
 }
@@ -66,16 +100,31 @@
 
     .el-col-sm-offset-#{$i} {
       margin-left: (1 / 24 * $i * 100) * 1%;
+
+      @include rtl(){
+        margin-left: inherit;
+        margin-right: (1 / 24 * $i * 100) * 1%;
+      }
     }
 
     .el-col-sm-pull-#{$i} {
       position: relative;
       right: (1 / 24 * $i * 100) * 1%;
+
+      @include rtl(){
+        left: (1 / 24 * $i * 100) * 1%;
+        right: inherit;
+      }
     }
 
     .el-col-sm-push-#{$i} {
       position: relative;
       left: (1 / 24 * $i * 100) * 1%;
+
+      @include rtl(){
+        left: inherit;
+        right: (1 / 24 * $i * 100) * 1%;
+      }
     }
   }
 }
@@ -91,16 +140,31 @@
 
     .el-col-md-offset-#{$i} {
       margin-left: (1 / 24 * $i * 100) * 1%;
+
+      @include rtl(){
+        margin-right: (1 / 24 * $i * 100) * 1%;
+        margin-left: inherit;
+      }
     }
 
     .el-col-md-pull-#{$i} {
       position: relative;
       right: (1 / 24 * $i * 100) * 1%;
+
+      @include rtl(){
+        right: inherit;
+        left: (1 / 24 * $i * 100) * 1%;
+      }
     }
 
     .el-col-md-push-#{$i} {
       position: relative;
       left: (1 / 24 * $i * 100) * 1%;
+
+      @include rtl(){
+        right: (1 / 24 * $i * 100) * 1%;
+        left: inherit;
+      }
     }
   }
 }
@@ -116,16 +180,31 @@
 
     .el-col-lg-offset-#{$i} {
       margin-left: (1 / 24 * $i * 100) * 1%;
+
+      @include rtl(){
+        margin-right: (1 / 24 * $i * 100) * 1%;
+        margin-left: inherit;
+      }
     }
 
     .el-col-lg-pull-#{$i} {
       position: relative;
       right: (1 / 24 * $i * 100) * 1%;
+
+      @include rtl(){
+        right: inherit;
+        left: (1 / 24 * $i * 100) * 1%;
+      }
     }
 
     .el-col-lg-push-#{$i} {
       position: relative;
       left: (1 / 24 * $i * 100) * 1%;
+
+      @include rtl(){
+        right: (1 / 24 * $i * 100) * 1%;
+        left: inherit;
+      }
     }
   }
 }
@@ -141,16 +220,31 @@
 
     .el-col-xl-offset-#{$i} {
       margin-left: (1 / 24 * $i * 100) * 1%;
+
+      @include rtl(){
+        margin-right: (1 / 24 * $i * 100) * 1%;
+        margin-left: inherit;
+      }
     }
 
     .el-col-xl-pull-#{$i} {
       position: relative;
       right: (1 / 24 * $i * 100) * 1%;
+
+      @include rtl(){
+        left: (1 / 24 * $i * 100) * 1%;
+        right: inherit;
+      }
     }
 
     .el-col-xl-push-#{$i} {
       position: relative;
       left: (1 / 24 * $i * 100) * 1%;
+
+      @include rtl(){
+        right: (1 / 24 * $i * 100) * 1%;
+        left: inherit;
+      }
     }
   }
 }

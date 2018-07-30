@@ -23,6 +23,11 @@
   @include utils-user-select(none);
   & + & {
     margin-left: 10px;
+
+    @include rtl(){
+      margin-left: inherit;
+      margin-right: 10px;
+    }
   }
 
   @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, $--button-border-radius);
@@ -47,6 +52,11 @@
   & [class*="el-icon-"] {
     & + span {
       margin-left: 5px;
+
+      @include rtl(){
+        margin-left: inherit;
+        margin-right: 5px;
+      }
     }
   }
 
@@ -189,17 +199,41 @@
   & .el-button {
     float: left;
     position: relative;
+
+    @include rtl(){
+      float: right;
+    }
+
     & + .el-button {
       margin-left: 0;
+
+      @include rtl(){
+        margin-left: inherit;
+        margin-right: 0;
+      }
     }
 
     &:first-child {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
+
+      @include rtl(){
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: $--button-border-radius;
+        border-bottom-right-radius: $--button-border-radius;
+      }
     }
     &:last-child {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+
+      @include rtl(){
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: $--button-border-radius;
+        border-bottom-left-radius: $--button-border-radius;
+      }
     }
     &:first-child:last-child {
       border-top-right-radius: $--button-border-radius;
@@ -220,6 +254,11 @@
     }
     &:not(:last-child) {
       margin-right: -1px;
+
+      @include rtl(){
+        margin-right: inherit;
+        margin-left: -1px;
+      }
     }
 
     &:hover,
@@ -237,9 +276,19 @@
     .el-button--#{$type} {
       &:first-child {
         border-right-color: rgba($--color-white, 0.5);
+
+        @include rtl(){
+          border-right-color: inherit;
+          border-left-color: rgba($--color-white, 0.5);
+        }
       }
       &:last-child {
         border-left-color: rgba($--color-white, 0.5);
+
+        @include rtl(){
+          border-right-color: rgba($--color-white, 0.5);
+          border-left-color: inherit;
+        }
       }
       &:not(:first-child):not(:last-child) {
         border-left-color: rgba($--color-white, 0.5);

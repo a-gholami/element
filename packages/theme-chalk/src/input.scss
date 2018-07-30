@@ -109,6 +109,11 @@
     color: $--input-icon-color;
     transition: all .3s;
     pointer-events: none;
+
+    @include rtl(){
+      right: inherit;
+      left: 5px;
+    }
   }
 
   @include e(suffix-inner) {
@@ -123,6 +128,11 @@
     text-align: center;
     color: $--input-icon-color;
     transition: all .3s;
+
+    @include rtl(){
+      right: 5px;
+      left: inherit;
+    }
   }
 
   @include e(icon) {
@@ -172,12 +182,22 @@
   @include m(suffix) {
     .el-input__inner {
       padding-right: 30px;
+
+      @include rtl(){
+        padding-right: 15px;
+        padding-left: 30px;
+      }
     }
   }
 
   @include m(prefix) {
     .el-input__inner {
       padding-left: 30px;
+
+      @include rtl(){
+        padding-right: 30px;
+        padding-left: 15px;
+      }
     }
   }
 
@@ -273,18 +293,46 @@
     border-right: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+
+    @include rtl(){
+      border-right: $--border-base;
+      border-top-right-radius: $--input-border-radius;
+      border-bottom-right-radius: $--input-border-radius;
+      border-left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+
+    }
   }
 
   @include e(append) {
     border-left: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+
+    @include rtl(){
+      border-right: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-left: $--border-base;
+      border-top-left-radius: $--input-border-radius;
+      border-bottom-left-radius: $--input-border-radius;
+
+    }
   }
 
   @include m(prepend) {
     .el-input__inner {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+
+      @include rtl(){
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: $--input-border-radius;
+        border-bottom-left-radius: $--input-border-radius;
+
+      }
     }
     .el-select .el-input.is-focus .el-input__inner {
       border-color: transparent;
@@ -295,6 +343,14 @@
     .el-input__inner {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
+
+      @include rtl(){
+        border-top-right-radius: $--input-border-radius;
+        border-bottom-right-radius: $--input-border-radius;
+        border-top-left-radius:  0;
+        border-bottom-left-radius: 0;
+
+      }
     }
     .el-select .el-input.is-focus .el-input__inner {
       border-color: transparent;
@@ -307,4 +363,10 @@
   display: none;
   width: 0;
   height: 0;
+}
+
+.el-input-group--append.el-input-group--prepend .el-input__inner{
+  @include rtl(){
+    border-radius: 0;
+  }
 }

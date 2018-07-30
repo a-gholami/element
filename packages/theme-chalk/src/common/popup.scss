@@ -32,6 +32,11 @@
   height: 100%;
   opacity: 0.5;
   background: #000;
+
+  @include rtl(){
+    right:0;
+    left:inherit;
+  }
 }
 
 @include b(popup-parent) {

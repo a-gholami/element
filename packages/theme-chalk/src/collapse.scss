@@ -24,8 +24,21 @@
       float: right;
       line-height: 48px;
       font-weight: 300;
+
+      @include rtl(){
+        margin-right: inherit;
+        margin-left: 8px;
+        float: left;
+        &:before{
+          content: "\E600";
+        }
+      }
       @include when(active) {
         transform: rotate(90deg);
+
+        @include rtl(){
+          transform: rotate(-90deg);
+        }
       }
     }
     &.focusing:focus:not(:hover){

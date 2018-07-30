@@ -188,3 +188,8 @@
   }
 }
 
+@mixin rtl() {
+  .#{$namespace+'-rtl'} & {
+    @content;
+  }
+}

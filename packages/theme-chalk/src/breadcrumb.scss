@@ -12,6 +12,10 @@
     font-weight: bold;
     color: $--color-text-placeholder;
 
+    @include rtl(){
+      float: left;
+    }
+
     &[class*=icon] {
       margin: 0 6px;
       font-weight: normal;
@@ -20,6 +24,10 @@
 
   @include e(item) {
     float: left;
+
+    @include rtl(){
+      float: right;
+    }
 
     @include e(inner) {
       color: $--color-text-regular;

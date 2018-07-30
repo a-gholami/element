@@ -5,9 +5,7 @@
   min-width: $--message-min-width;
   box-sizing: border-box;
   border-radius: $--border-radius-base;
-  border-width: $--border-width-base;
-  border-style: $--border-style-base;
-  border-color: $--border-color-lighter;
+  border: $--border-width-base $--border-style-base $--border-color-lighter;
   position: fixed;
   left: 50%;
   top: 20px;
@@ -19,6 +17,13 @@
   display: flex;
   align-items: center;
 
+  @include rtl(){
+    text-align: right !important;
+    left: inherit;
+    right: 50%;
+    transform: translateX(50%);
+    direction: rtl;
+  }
   @include when(center) {
     justify-content: center;
   }
@@ -26,6 +31,11 @@
   @include when(closable) {
     .el-message__content {
       padding-right: 16px;
+
+      @include rtl(){
+        padding-right: inherit;
+        padding-left: 16px;
+      }
     }
   }
 
@@ -68,6 +78,11 @@
 
   @include e(icon) {
     margin-right: 10px;
+
+    @include rtl(){
+      margin-right: inherit;
+      margin-left: 10px;
+    }
   }
 
   @include e(content) {
@@ -88,6 +103,11 @@
     color: $--message-close-color;
     font-size: $--message-close-size;
 
+    @include rtl(){
+      right: inherit;
+      left: 15px;
+      transform: translate(-93%,-50%);
+    }
     &:focus {
       outline-width: 0;
     }
@@ -117,4 +137,8 @@
 .el-message-fade-leave-active {
   opacity: 0;
   transform: translate(-50%, -100%);
+
+  @include rtl(){
+    transform: translate(50%, 100%);
+  }
 }

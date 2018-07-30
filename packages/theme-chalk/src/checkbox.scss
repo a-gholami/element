@@ -32,6 +32,11 @@
 
     & + .el-checkbox.is-bordered {
       margin-left: 10px;
+
+      @include rtl(){
+        margin-left: inherit;
+        margin-right: 10px;
+      }
     }
 
     &.el-checkbox--medium {
@@ -219,6 +224,11 @@
       width: 3px;
       transition: transform .15s ease-in .05s;
       transform-origin: center;
+
+      @include rtl(){
+        left: inherit;
+        right: 4px;
+      }
     }
   }
 
@@ -237,10 +247,20 @@
     padding-left: 10px;
     line-height: 19px;
     font-size: $--checkbox-font-size;
+
+    @include rtl(){
+      padding-left: inherit;
+      padding-right: 10px;
+    }
   }
 
   & + .el-checkbox {
     margin-left: 30px;
+
+    @include rtl(){
+      margin-left: inherit;
+      margin-right: 30px;
+    }
   }
 }
 
@@ -266,6 +286,12 @@
     margin: 0;
     position: relative;
     transition: $--all-transition;
+
+    @include rtl(){
+      border-left: inherit;
+      border-right: 0;
+    }
+
     @include utils-user-select(none);
 
     @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, 0);
@@ -279,6 +305,11 @@
 
       & + span {
         margin-left: 5px;
+
+        @include rtl(){
+          margin-left: inherit;
+          margin-right: 5px;
+        }
       }
     }
   }
@@ -300,6 +331,12 @@
     }
     &:first-child .el-checkbox-button__inner {
       border-left-color: $--checkbox-button-checked-border-color;
+
+      @include rtl(){
+        border-left-color: inherit;
+        border-right-color: $--checkbox-button-checked-border-color;
+        border-radius: 0 $--border-radius-base $--border-radius-base 0;
+      }
     }
   }
 
@@ -314,6 +351,12 @@
     }
     &:first-child .el-checkbox-button__inner {
       border-left-color: $--button-disabled-border;
+
+      @include rtl(){
+        border-left-color: inherit;
+        border-right-color: $--button-disabled-border;
+        border-radius: 0 $--border-radius-base $--border-radius-base 0;
+      }
     }
   }
 
@@ -322,6 +365,12 @@
       border-left: $--border-base;
       border-radius: $--border-radius-base 0 0 $--border-radius-base;
       box-shadow: none !important;
+
+      @include rtl(){
+        border-left: inherit;
+        border-right: $--border-base;
+        border-radius: 0 $--border-radius-base $--border-radius-base 0;
+      }
     }
   }
 
@@ -334,6 +383,12 @@
   &:last-child {
     .el-checkbox-button__inner {
       border-radius: 0 $--border-radius-base $--border-radius-base 0;
+
+      @include rtl(){
+        border-radius: $--border-radius-base 0 0 $--border-radius-base;
+        border-left: $--border-base;
+        border-right: 0;
+      }
     }
   }
   @include m(medium) {

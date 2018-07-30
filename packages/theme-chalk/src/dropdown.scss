@@ -22,6 +22,11 @@
     position: relative;
     border-left: none;
 
+    @include rtl(){
+      border-left: inherit;
+      border-right: none;
+    }
+
     &::before {
       $gap: 5px;
 
@@ -33,6 +38,11 @@
       bottom: $gap;
       left: 0;
       background: mix(white, transparent, 50%);
+
+      @include rtl(){
+        left: inherit;
+        right: 0;
+      }
     }
 
     &:hover {
@@ -44,6 +54,11 @@
 
     & .el-dropdown__icon {
       padding-left: 0;
+
+      @include rtl(){
+        padding-left: inherit;
+        padding-right: 0;
+      }
     }
   }
   @include e(icon) {
@@ -70,6 +85,10 @@
   border-radius: $--border-radius-base;
   box-shadow: $--dropdown-menu-box-shadow;
 
+  @include rtl(){
+    left: inherit;
+    right: 0;
+  }
   @include e(item) {
     list-style: none;
     line-height: 36px;

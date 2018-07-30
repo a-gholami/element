@@ -16,6 +16,7 @@
   box-sizing: border-box;
   white-space: nowrap;
 
+  @include rtl(){ text-align: right; }
   * {
     vertical-align: middle;
   }
@@ -44,11 +45,23 @@
   margin: 0;
   padding-left: 0;
   background-color: $--menu-item-fill;
+
+  @include rtl(){
+    border-right: none;
+    border-left: solid 1px #e6e6e6;
+    padding-left: inherit;
+    padding-right: 0;
+  }
   @include utils-clearfix;
 
   @include m(horizontal) {
     border-right: none;
     border-bottom: solid 1px #e6e6e6;
+
+    @include rtl(){
+      border-left: none;
+    }
+
     & > .el-menu-item {
       float: left;
       height: 60px;
@@ -56,6 +69,11 @@
       margin: 0;
       border-bottom: 2px solid transparent;
       color: $--color-text-secondary;
+
+      @include rtl(){
+        float: right;
+        text-align: right;
+      }
 
       a,
       a:hover {
@@ -70,11 +88,20 @@
     & > .el-submenu {
       float: left;
 
+      @include rtl(){
+        float: right;
+        text-align: right;
+      }
+
       &:focus,
       &:hover {
         outline: none;
         .el-submenu__title {
           color: $--color-text-primary;
+
+          @include rtl(){
+            text-align: right;
+          }
         }
       }
 
@@ -82,6 +109,10 @@
         .el-submenu__title {
           border-bottom: 2px solid $--color-primary;
           color: $--color-text-primary;
+
+          @include rtl(){
+            text-align: right;
+          }
         }
       }
 
@@ -90,6 +121,10 @@
         line-height: 60px;
         border-bottom: 2px solid transparent;
         color: $--color-text-secondary;
+
+        @include rtl(){
+          text-align: right;
+        }
 
         &:hover {
           background-color: #fff;
@@ -100,6 +135,11 @@
         vertical-align: middle;
         margin-left: 8px;
         margin-top: -3px;
+
+        @include rtl(){
+          margin-left: inherit;
+          margin-right: 8px;
+        }
       }
     }
     & .el-menu {
@@ -112,6 +152,9 @@
         padding: 0 10px;
         color: $--color-text-secondary;
 
+        @include rtl(){
+          text-align: right;
+        }
         &.is-active {
           color: $--color-text-primary;
         }
@@ -132,6 +175,9 @@
 
     > .el-menu-item,
     > .el-submenu > .el-submenu__title {
+      @include rtl(){
+        text-align: right;
+      }
       [class^="el-icon-"] {
         margin: 0;
         vertical-align: middle;
@@ -169,11 +215,22 @@
         border: 1px solid $--border-color-light;
         border-radius: $--border-radius-small;
         box-shadow: $--box-shadow-light;
+
+        @include rtl(){
+          margin-left: 0;
+          margin-right: 5px;
+          left: inherit;
+          right: 100%;
+        }
       }
 
       &.is-opened {
         > .el-submenu__title .el-submenu__icon-arrow {
           transform: none;
+
+          @include rtl(){
+            text-align: right;
+          }
         }
       }
     }
@@ -204,6 +261,11 @@
     text-align: center;
     font-size: 18px;
     vertical-align: middle;
+
+    @include rtl(){
+      margin-left: 5px;
+      margin-right: 0;
+    }
   }
   @include when(active) {
     color: $--color-primary;
@@ -218,9 +280,16 @@
   margin: 0;
   padding-left: 0;
 
+  @include rtl(){
+    padding-right: 0;
+  }
+
   @include e(title) {
     @include menu-item;
 
+    @include rtl(){
+      text-align: right;
+    }
     &:hover {
       background-color: $--menu-item-hover-fill;
     }
@@ -241,10 +310,19 @@
     margin-top: -7px;
     transition: transform .3s;
     font-size: 12px;
+
+    @include rtl(){
+      right: inherit;
+      left: 20px;
+    }
   }
   @include when(active) {
     .el-submenu__title {
       border-bottom-color: $--color-primary;
+
+      @include rtl(){
+        text-align: right;
+      }
     }
   }
   @include when(opened) {
@@ -258,6 +336,10 @@
       opacity: 0.25;
       cursor: not-allowed;
       background: none !important;
+
+      @include rtl(){
+        text-align: right;
+      }
     }
   }
   [class^="el-icon-"] {
@@ -266,6 +348,11 @@
     width: 24px;
     text-align: center;
     font-size: 18px;
+
+    @include rtl(){
+      margin-right: 0;
+      margin-left: 5px;
+    }
   }
 }
 
@@ -278,6 +365,11 @@
     line-height: normal;
     font-size: 12px;
     color: $--color-text-secondary;
+
+    @include rtl(){
+      text-align: right;
+      padding: 7px 20px 7px 0;
+    }
   }
 }
 
