@@ -33,11 +33,22 @@
     border-top-color: $--popover-border-color;
     border-bottom-width: 0;
 
+    @include rtl(){
+      left: inherit;
+      right: 50%;
+      margin-right: inherit;
+      margin-left: #{$--tooltip-arrow-size / 2};
+    }
     &::after {
       bottom: 1px;
       margin-left: -$--popover-arrow-size;
       border-top-color: $--popover-fill;
       border-bottom-width: 0;
+
+      @include rtl(){
+        margin-left: inherit;
+        margin-right: -$--popover-arrow-size;
+      }
     }
   }
 
@@ -52,11 +63,21 @@
     border-top-width: 0;
     border-bottom-color: $--popover-border-color;
 
+    @include rtl(){
+      left: inherit;
+      right: 50%;
+      margin-right: inherit;
+      margin-left: #{$--tooltip-arrow-size / 2};
+    }
     &::after {
       top: 1px;
       margin-left: -$--popover-arrow-size;
       border-top-width: 0;
       border-bottom-color: $--popover-fill;
+      @include rtl(){
+        margin-right:  -$--popover-arrow-size;
+        margin-left: inherit;
+      }
     }
   }
 

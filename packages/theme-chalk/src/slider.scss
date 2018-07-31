@@ -20,6 +20,11 @@
     &.show-input {
       margin-right: 160px;
       width: auto;
+
+      @include rtl(){
+        margin-right: inherit;
+        margin-left: 160px;
+      }
     }
 
     &.disabled {
@@ -68,6 +73,9 @@
     margin-top: 3px;
     width: 130px;
 
+    @include rtl(){
+      float: left;
+    }
     &.el-input-number--mini {
       margin-top: 5px;
     }
@@ -86,6 +94,10 @@
     background-color: $--slider-main-background-color;
     border-top-left-radius: $--slider-border-radius;
     border-bottom-left-radius: $--slider-border-radius;
+
+    @include rtl(){
+      border-radius: $--slider-border-radius;
+    }
     position: absolute;
   }
 
@@ -167,6 +179,12 @@
       top: auto;
       left: $--slider-button-wrapper-offset;
       transform: translateY(50%);
+
+      @include rtl(){
+        left: inherit;
+        right: $--slider-button-wrapper-offset;
+        transform: translateY(-50%);
+      }
     }
     .el-slider__stop {
       transform: translateY(50%);
@@ -199,10 +217,22 @@
           width: 18px;
           right: 18px;
           border-bottom-left-radius: $--input-border-radius;
+
+          @include rtl(){
+            left: 18px;
+            right: inherit;
+            border-bottom-right-radius: $--input-border-radius;
+          }
         }
         .el-input-number__increase {
           width: 19px;
           border-bottom-right-radius: $--input-border-radius;
+
+          @include rtl(){
+            left: 18px;
+            right: inherit;
+            border-bottom-left-radius: $--input-border-radius;
+          }
           & ~ .el-input .el-input__inner {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;

@@ -18,6 +18,10 @@
   overflow: hidden;
   backface-visibility: hidden;
 
+  @include rtl(){
+    text-align: right;
+  }
+
   @include e(wrapper) {
     position: fixed;
     top: 0;
@@ -47,6 +51,11 @@
     font-size: $--msgbox-font-size;
     line-height: 1;
     color: $--color-text-primary;
+
+    @include rtl(){
+      padding-left: inherit;
+      padding-right: 0;
+    }
   }
 
   @include e(headerbtn) {
@@ -60,6 +69,10 @@
     font-size: $--message-close-size;
     cursor: pointer;
 
+    @include rtl(){
+      right: inherit;
+      left:$--msgbox-padding-primary;
+    }
     .el-message-box__close {
       color: $--color-info;
     }
@@ -99,11 +112,21 @@
     &::before {
       // 防止图标切割
       padding-left: 1px;
+
+      @include rtl(){
+        padding-left: inherit;
+        padding-right: 1px;
+      }
     }
 
     + .el-message-box__message {
       padding-left: 36px;
       padding-right: 12px;
+
+      @include rtl(){
+        padding-right: 36px;
+        padding-left: 12px;
+      }
     }
 
     &.el-icon-success {
@@ -143,8 +166,16 @@
     padding: 5px 15px 0;
     text-align: right;
 
+    @include rtl(){
+      text-align: left;
+    }
+
     & button:nth-child(2) {
       margin-left: 10px;
+      @include rtl(){
+        margin-left: inherit;
+        margin-right: 10px;
+      }
     }
   }
 
@@ -173,10 +204,20 @@
       padding-right: 5px;
       text-align: center;
       transform: translateY(-1px);
+
+      @include rtl(){
+        padding-right: inherit;
+        padding-left: 5px;
+      }
     }
 
     @include e(message) {
       margin-left: 0;
+
+      @include rtl(){
+        margin-left: inherit;
+        margin-right: 0;
+      }
     }
 
     @include e((btns, content)) {

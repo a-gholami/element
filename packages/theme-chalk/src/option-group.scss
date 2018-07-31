@@ -34,9 +34,18 @@
     font-size: $--select-group-font-size;
     color: $--select-group-color;
     line-height: $--select-group-height;
+
+    @include rtl(){
+      padding-left: inherit;
+      padding-right: $gap;
+    }
   }
 
   & .el-select-dropdown__item {
     padding-left: $gap;
+    @include rtl(){
+      padding-left: inherit;
+      padding-right: $gap;
+    }
   }
 }

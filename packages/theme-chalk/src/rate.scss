@@ -23,6 +23,11 @@
     margin-right: $--rate-icon-margin;
     color: $--rate-icon-color;
     transition: .3s;
+
+    @include rtl(){
+      margin-right: inherit;
+      margin-left: $--rate-icon-margin;
+    }
     &.hover {
       transform: scale(1.15);
     }
@@ -31,6 +36,11 @@
       position: absolute;
       left: 0;
       top: 0;
+
+      @include rtl(){
+        left: inherit;
+        right: 0;
+      }
     }
   }
 
@@ -40,6 +50,11 @@
     left: 0;
     display: inline-block;
     overflow: hidden;
+
+    @include rtl(){
+      left: inherit;
+      right: 0;
+    }
   }
 
   @include e(text) {

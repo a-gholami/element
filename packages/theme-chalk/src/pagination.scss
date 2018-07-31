@@ -31,6 +31,11 @@
   .el-input__suffix {
     right: 0;
     transform: scale(.8);
+
+    @include rtl(){
+      right: inherit;
+      left: 0;
+    }
   }
 
   .el-select .el-input {
@@ -40,6 +45,11 @@
     .el-input__inner {
       padding-right: 25px;
       border-radius: $--pagination-border-radius;
+
+      @include rtl(){
+        padding-right: inherit;
+        padding-left: 25px;
+      }
     }
   }
 
@@ -81,10 +91,28 @@
 
   .btn-prev {
     padding-right: 12px;
+    i::before{
+      @include rtl(){
+        content: "\E604";
+      }
+    }
+    @include rtl(){
+      padding-right: inherit;
+      padding-left: 12px;
+    }
   }
 
   .btn-next {
-    padding-left: 12px;    
+    padding-left: 12px;
+    i::before{
+      @include rtl(){
+        content: "\E600";
+      }
+    }
+    @include rtl(){
+      padding-right: 12px;
+      padding-left: inherit;
+    }
   }
 
   .el-pager li.disabled {
@@ -138,6 +166,10 @@
       font-size: $--pagination-font-size;
       padding-left: 8px;
 
+      @include rtl(){
+        padding-right: 8px;
+        padding-left: inherit;
+      }
       &:hover {
         border-color: $--pagination-hover-fill;
       }
@@ -148,6 +180,11 @@
     margin-right: 10px;
     font-weight: normal;
     color: $--color-text-regular;
+
+    @include rtl(){
+      margin-right: inherit;
+      margin-left: 10px;
+    }
   }
 
   @include e(jump) {
@@ -155,6 +192,10 @@
     font-weight: normal;
     color: $--color-text-regular;
 
+    @include rtl(){
+      margin-right: 24px;
+      margin-left: inherit;
+    }
     .el-input__inner {
       padding: 0 3px;
     }
@@ -162,6 +203,10 @@
 
   @include e(rightwrapper) {
     float: right;
+
+    @include rtl(){
+      float: left;
+    }
   }
 
   @include e(editor) {
@@ -281,6 +326,11 @@
 
     &.active + li {
       border-left: 0;
+
+      @include rtl(){
+        border-right: 0;
+        border-left: inherit;
+      }
     }
 
     &:hover {

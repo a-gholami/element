@@ -18,6 +18,10 @@
     overflow: scroll;
     height: 100%;
 
+    @include rtl(){
+      overflow: hidden;
+    }
+
     @include m(hidden-default) {
       &::-webkit-scrollbar {
         width: 0;
@@ -50,6 +54,10 @@
     opacity: 0;
     transition: opacity 120ms ease-out;
 
+    @include rtl(){
+      right: inherit;
+      left: 2px;
+    }
     @include when(vertical) {
       width: 6px;
       top: 2px;
@@ -63,6 +71,10 @@
       height: 6px;
       left: 2px;
 
+      @include rtl(){
+        right: 2px;
+        left: inherit;
+      }
       > div {
         height: 100%;
       }

@@ -26,6 +26,10 @@
     cursor: pointer;
     transition: $--all-transition;
 
+    @include rtl(){
+      border-left: inherit;
+      border-right: 0;
+    }
     @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, 0);
 
     &:hover {
@@ -37,6 +41,11 @@
 
       & + span {
         margin-left: 5px;
+
+        @include rtl(){
+          margin-left: 0;
+          margin-right: 5px;
+        }
       }
     }
   }
@@ -46,6 +55,12 @@
       border-left: $--border-base;
       border-radius: $--border-radius-base 0 0 $--border-radius-base;
       box-shadow: none !important;
+
+      @include rtl(){
+        border-left: inherit;
+        border-right: $--border-base;
+        border-radius: 0 $--border-radius-base $--border-radius-base 0;
+      }
     }
   }
 
@@ -82,6 +97,11 @@
   &:last-child {
     .el-radio-button__inner {
       border-radius: 0 $--border-radius-base $--border-radius-base 0;
+
+      @include rtl(){
+        border-radius: $--border-radius-base 0 0 $--border-radius-base;
+        border-left: $--border-base;
+      }
     }
   }
 

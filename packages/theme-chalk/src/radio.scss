@@ -33,6 +33,11 @@
 
     & + .el-radio.is-bordered {
       margin-left: 10px;
+
+      @include rtl(){
+        margin-left: inherit;
+        margin-right: 10px;
+      }
     }
   }
 
@@ -81,6 +86,11 @@
 
   & + .el-radio {
     margin-left: 30px;
+
+    @include rtl(){
+      margin-left: inherit;
+      margin-right: 30px;
+    }
   }
 
   @include e(input) {
@@ -130,6 +140,9 @@
 
         &::after {
           transform: translate(-50%, -50%) scale(1);
+          @include rtl(){
+            transform: translate(50%, -50%) scale(1);
+          }
         }
       }
 
@@ -170,6 +183,12 @@
       top: 50%;
       transform: translate(-50%, -50%) scale(0);
       transition: transform .15s ease-in;
+
+      @include rtl(){
+        left: inherit;
+        right: 50%;
+        transform: translate(50%, -50%) scale(0);
+      }
     }
   }
 
@@ -194,5 +213,10 @@
   @include e(label) {
     font-size: $--radio-font-size;
     padding-left: 10px;
+
+    @include rtl(){
+      padding-left: inherit;
+      padding-right: 10px;
+    }
   }
 }
