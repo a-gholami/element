@@ -47,6 +47,11 @@
         margin-left: -5px;
         border-top-color: $--tooltip-fill;
         border-bottom-width: 0;
+
+        @include rtl(){
+          margin-left: inherit;
+          margin-right: -5px;
+        }
       }
     }
 
@@ -64,6 +69,11 @@
         margin-left: -5px;
         border-top-width: 0;
         border-bottom-color: $--tooltip-fill;
+
+        @include rtl(){
+          margin-left: inherit;
+          margin-right: -5px;
+        }
       }
     }
 

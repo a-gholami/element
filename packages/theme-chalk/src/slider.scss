@@ -183,7 +183,6 @@
       @include rtl(){
         left: inherit;
         right: $--slider-button-wrapper-offset;
-        transform: translateY(-50%);
       }
     }
     .el-slider__stop {

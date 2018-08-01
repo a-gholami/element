@@ -24,6 +24,12 @@
     background-color: $--color-primary;
     font-size: 0;
 
+    @include rtl{
+      &+.el-button{
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
     @include when(with-texts) {
       border-radius: $--border-radius-base;
     }
@@ -54,6 +60,14 @@
 
     & [class*="el-icon-"] + span {
       margin-left: 0;
+    }
+    @include rtl(){
+      & [class*="el-icon-arrow-right"]::before {
+        content: "\E600";
+      }
+      & [class*="el-icon-arrow-left"]::before {
+        content: "\E604";
+      }
     }
   }
 }
@@ -98,8 +112,17 @@
     padding-left: 15px;
     display: block;
 
+    @include rtl(){
+      padding-left: inherit;
+      padding-right: 15px;
+    }
     & + .el-transfer-panel__item {
       margin-left: 0;
+
+      @include rtl(){
+        margin-left: inherit;
+        margin-right: 0;
+      }
     }
 
     &.el-checkbox {
@@ -117,6 +140,11 @@
       box-sizing: border-box;
       padding-left: 24px;
       line-height: $--transfer-item-height;
+
+      @include rtl(){
+        padding-left: inherit;
+        padding-right: 24px;
+      }
     }
 
     .el-checkbox__input {
@@ -141,10 +169,20 @@
       border-radius: #{$--transfer-filter-height / 2};
       padding-right: 10px;
       padding-left: 30px;
+
+      @include rtl(){
+        padding-right: 30px;
+        padding-left: 10px;
+      }
     }
 
     .el-input__icon {
       margin-left: 5px;
+
+      @include rtl(){
+        margin-left: inherit;
+        margin-right: 5px;
+      }
     }
 
     .el-icon-circle-close {
@@ -162,6 +200,10 @@
     box-sizing: border-box;
     color: $--color-black;
 
+    @include rtl(){
+      padding-left: inherit;
+      padding-right: 15px;
+    }
     .el-checkbox {
       display: block;
       line-height: 40px;
@@ -177,6 +219,11 @@
           color: $--color-text-secondary;
           font-size: 12px;
           font-weight: normal;
+
+          @include rtl(){
+            right: inherit;
+            left: 15px;
+          }
         }
       }
     }
@@ -195,9 +242,18 @@
     z-index: $--index-normal;
     @include utils-vertical-center;
 
+    @include rtl(){
+      right: 0;
+      left: inherit;
+    }
     .el-checkbox {
       padding-left: 20px;
       color: $--color-text-regular;
+
+      @include rtl(){
+        padding-left: inherit;
+        padding-right: 20px;
+      }
     }
   }
 
@@ -212,6 +268,11 @@
 
   .el-checkbox__label {
     padding-left: 8px;
+
+    @include rtl(){
+      padding-left: inherit;
+      padding-right: 8px;
+    }
   }
 
   .el-checkbox__inner {
@@ -222,6 +283,11 @@
       height: 6px;
       width: 3px;
       left: 4px;
+
+      @include rtl(){
+        left: inherit;
+        right: 4px;
+      }
     }
   }
 }

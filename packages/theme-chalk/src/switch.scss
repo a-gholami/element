@@ -32,9 +32,19 @@
 
     @include m(left) {
       margin-right: 10px;
+
+      @include rtl(){
+        margin-right: inherit;
+        margin-left: 10px;
+      }
     }
     @include m(right) {
       margin-left: 10px;
+
+      @include rtl(){
+        margin-right: 10px;
+        margin-left: inherit;
+      }
     }
     & * {
       line-height: 1;
@@ -79,6 +89,11 @@
       width: $--switch-button-size;
       height: $--switch-button-size;
       background-color: $--color-white;
+
+      @include rtl(){
+        left: inherit;
+        right: 1px;
+      }
     }
   }
 
@@ -89,6 +104,13 @@
       &::after {
         left: 100%;
         margin-left: -$--switch-button-size - 1px;
+
+        @include rtl(){
+          left: inherit;
+          right: 100%;
+          margin-left: inherit;
+          margin-right: -$--switch-button-size - 1px;
+        }
       }
     }
   }

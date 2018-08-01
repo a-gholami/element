@@ -24,6 +24,11 @@
     left: 0;
     opacity: 0;
     filter: alpha(opacity=0);
+
+    @include rtl(){
+      left: inherit;
+      right: 0;
+    }
   }
 
   /* 照片墙模式 */
@@ -134,11 +139,23 @@
       position: absolute;
       right: 0;
       top: -13px;
+
+      @include rtl(){
+        right: inherit;
+        left: 0;
+      }
     }
 
     .el-progress-bar {
       margin-right: 0;
       padding-right: 0;
+
+      @include rtl(){
+        margin-right: inherit;
+        margin-left: 0;
+        padding-right: inherit;
+        padding-left: 0;
+      }
     }
 
     &:first-child {
@@ -159,6 +176,10 @@
       color: $--color-text-regular;
       //transform: scale(.7);
 
+      @include rtl(){
+        right: inherit;
+        left: 5px;
+      }
       &:hover {
         opacity: 1;
       }
@@ -173,6 +194,11 @@
       cursor: pointer;
       opacity: 1;
       color: $--color-primary;
+
+      @include rtl(){
+        right: inherit;
+        left: 5px;
+      }
     }
     
     &:hover {
@@ -234,11 +260,22 @@
     transition: color .3s;
     white-space: nowrap;
 
+    @include rtl(){
+      margin-right: 0;
+      margin-left: 40px;
+      padding-left: inherit;
+      padding-right: 4px;
+    }
     [class^="el-icon"] {
       height: 100%;
       margin-right: 7px;
       color: $--color-text-secondary;
       line-height: inherit;
+
+      @include rtl(){
+        margin-right: inherit;
+        margin-left: 7px;
+      }
     }
   }
 
@@ -248,6 +285,11 @@
     top: 0;
     line-height: inherit;
     display: none;
+
+    @include rtl(){
+      right: inherit;
+      left: 5px;
+    }
   }
 
   @include e(item-delete) {
@@ -258,6 +300,10 @@
     color: $--color-text-regular;
     display: none;
 
+    @include rtl(){
+      right: inherit;
+      left: 10px;
+    }
     &:hover {
       color: $--color-primary;
     }
@@ -338,6 +384,11 @@
       font-size: 20px;
       background-color: rgba(0, 0, 0, .5);
       transition: opacity .3s;
+
+      @include rtl(){
+        right: 0;
+        left: inherit;
+      }
       &::after {
         display: inline-block;
         content: "";
@@ -352,6 +403,11 @@
 
       span + span {
         margin-left: 15px;
+
+        @include rtl(){
+          margin-left: 0;
+          margin-right: 15px;
+        }
       }
 
       .el-upload-list__item-delete {
@@ -375,6 +431,10 @@
       bottom: auto;
       width: 126px;
 
+      @include rtl(){
+        left: inherit;
+        right: 50%;
+      }
       .el-progress__text {
         top: 50%;
       }
@@ -431,6 +491,12 @@
       position: relative;
       z-index: 1;
       margin-left: -80px;
+
+      @include rtl(){
+        float: right;
+        margin-left: inherit;
+        margin-right: -80px;
+      }
     }
 
     .el-upload-list__item-name {
@@ -443,6 +509,11 @@
         position: absolute;
         left: 9px;
         top: 10px;
+
+        @include rtl(){
+          left: inherit;
+          right: 9px;
+        }
       }
     }
 
@@ -456,7 +527,6 @@
       text-align: center;
       transform: rotate(45deg);
       box-shadow: 0 1px 1px #ccc;
-
       i {
         font-size: 12px;
         margin-top: 12px;
@@ -480,6 +550,11 @@
   overflow: hidden;
   z-index: 10;
   cursor: default;
+
+  @include rtl(){
+    left: inherit;
+    right: 0;
+  }
   @include utils-vertical-center;
 
   img {
@@ -524,6 +599,11 @@
     left: 0;
     width: 100%;
     height: 100%;
+
+    @include rtl(){
+      left: inherit;
+      right: 0;
+    }
   }
 
   @include e(interact) {
@@ -535,6 +615,10 @@
     background-color: rgba(#000, .72);
     text-align: center;
 
+    @include rtl(){
+      left: inherit;
+      right: 0;
+    }
     .btn {
       display: inline-block;
       color: $--color-white;
@@ -555,6 +639,11 @@
 
       &:not(:first-child) {
         margin-left: 35px;
+
+        @include rtl(){
+          margin-left: inherit;
+          margin-right: 35px;
+        }
       }
 
       &:hover {
@@ -592,6 +681,12 @@
     line-height: 36px;
     font-size: 14px;
     color: $--color-text-primary;
+
+    @include rtl(){
+      left: inherit;
+      right: 0;
+      text-align: right;
+    }
   }
 
   + .el-upload__inner {

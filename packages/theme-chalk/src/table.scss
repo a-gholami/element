@@ -57,6 +57,13 @@
       top: 50%;
       margin-left: -5px;
       margin-top: -5px;
+
+      @include rtl(){
+        left: inherit;
+        right: 50%;
+        margin-left: inherit;
+        margin-right: -5px;
+      }
     }
   }
 
@@ -77,8 +84,18 @@
     border-right: 0;
     border-bottom: 0;
 
+    @include rtl(){
+      border-right: inherit;
+      border-left: 0;
+    }
+
     th.gutter, td.gutter {
       border-right-width: 1px;
+
+      @include rtl(){
+        border-right-width: inherit;
+        border-left-width: 1px;
+      }
     }
   }
 
@@ -130,6 +147,11 @@
       border-right-width: 0;
       border-bottom-width: 0;
       padding: 0;
+
+      @include rtl(){
+        border-right-width: inherit;
+        border-left-width: 0;
+      }
     }
 
     &.is-hidden {
@@ -182,6 +204,10 @@
     text-align: left;
     background-color: $--table-header-background;
 
+    @include rtl(){
+      text-align: right;
+    }
+
     div {
       display: inline-block;
       padding-left: 10px;
@@ -216,6 +242,11 @@
       background: #ff4d51;
       margin-right: 5px;
       vertical-align: middle;
+
+      @include rtl(){
+        margin-right: inherit;
+        margin-left: 5px;
+      }
     }
   }
 
@@ -263,6 +294,11 @@
       right: 0;
       width: 1px;
       height: 100%;
+
+      @include rtl(){
+        right: inherit;
+        left: 0;
+      }
     }
   }
 
@@ -273,12 +309,22 @@
     bottom: 0;
     width: 100%;
     height: 1px;
+
+    @include rtl(){
+      right: 0;
+      left: inherit;
+    }
   }
 
   // table--border
   @include m(border) {
     border-right: none;
     border-bottom: none;
+
+    @include rtl(){
+      border-right: inherit;
+      border-left: none;
+    }
 
     &.el-loading-parent--relative {
       border-color: transparent;
@@ -287,8 +333,17 @@
     th, td {
       border-right: $--table-border;
 
+      @include rtl(){
+        border-left: $--table-border;
+      }
+
       &:first-child .cell {
         padding-left: 10px;
+
+        @include rtl(){
+          padding-left: inherit;
+          padding-right: 10px;
+        }
       }
     }
 
@@ -314,6 +369,10 @@
     overflow-y: hidden;
     box-shadow: $--table-fixed-box-shadow;
 
+    @include rtl(){
+      left: inherit;
+      right: 0;
+    }
     &::before {
       content: '';
       position: absolute;
@@ -323,6 +382,11 @@
       height: 1px;
       background-color: $--border-color-lighter;
       z-index: 4;
+
+      @include rtl(){
+        left: inherit;
+        right: 0;
+      }
     }
   }
 
@@ -332,6 +396,11 @@
     right: 0;
     background-color: $--color-white;
     border-bottom: $--table-border;
+
+    @include rtl(){
+      left: 0;
+      right: inherit;
+    }
   }
 
   @include e(fixed-right) {
@@ -339,11 +408,21 @@
     left: auto;
     right: 0;
 
+    @include rtl(){
+      right: inherit;
+      left: 0;
+    }
+
     .el-table__fixed-header-wrapper,
     .el-table__fixed-body-wrapper,
     .el-table__fixed-footer-wrapper {
       left: auto;
       right: 0;
+
+      @include rtl(){
+        right: auto;
+        left: 0;
+      }
     }
   }
 
@@ -352,6 +431,11 @@
     left: 0;
     top: 0;
     z-index: 3;
+
+    @include rtl(){
+      right: 0;
+      left: inherit;
+    }
   }
 
   @include e(fixed-footer-wrapper) {
@@ -360,6 +444,10 @@
     bottom: 0;
     z-index: 3;
 
+    @include rtl(){
+      right: 0;
+      left: inherit;
+    }
     & tbody td {
       border-top: $--table-border;
       background-color: $--table-row-hover-background;
@@ -373,6 +461,11 @@
     top: 37px;
     overflow: hidden;
     z-index: 3;
+
+    @include rtl(){
+      right: 0;
+      left: inherit;
+    }
   }
 
   @include e((header-wrapper, body-wrapper, footer-wrapper)) {
@@ -457,6 +550,11 @@
     position: absolute;
     left: 7px;
 
+    @include rtl(){
+      right: 7px;
+      left: inherit;
+    }
+
     &.ascending {
       border-bottom-color: $--color-text-placeholder;
       top: 5px;
@@ -520,6 +618,13 @@
     width: 0;
     border-left: $--table-border;
     z-index: 10;
+
+    @include rtl(){
+      right: 200px;
+      left: inherit;
+      border-left: inherit;
+      border-right: $--table-border;
+    }
   }
 
   @include e(column-filter-trigger) {
